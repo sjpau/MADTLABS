@@ -27,6 +27,11 @@ public class PlaceholderFragmentOne extends Fragment implements View.OnClickList
     private String mParam2;
 
     private Button buttonHelloWorld;
+    private String textHello = "Hello";
+    private String textWorld = "World!";
+    private int   textSwitched = 0;
+
+
 
     public PlaceholderFragmentOne() {
         // Required empty public constructor
@@ -73,6 +78,12 @@ public class PlaceholderFragmentOne extends Fragment implements View.OnClickList
         Random rnd = new Random();
         int color = Color.argb(255, rnd.nextInt(256), rnd.nextInt(256), rnd.nextInt(256));
         buttonHelloWorld.setBackgroundColor(color);
-        view.setBackgroundColor(color);
-}
+        if (textSwitched == 1) {
+            buttonHelloWorld.setText(textWorld);
+            textSwitched = 0;
+        } else {
+            buttonHelloWorld.setText(textHello);
+            textSwitched = 1;
+        }
+    }
 }
