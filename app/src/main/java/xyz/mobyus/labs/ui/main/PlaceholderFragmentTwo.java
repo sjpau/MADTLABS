@@ -1,5 +1,6 @@
 package xyz.mobyus.labs.ui.main;
 
+import android.content.Context;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -7,6 +8,13 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.EditText;
+import android.widget.Spinner;
+import android.widget.Toast;
+
+import java.util.ArrayList;
 
 import xyz.mobyus.labs.R;
 
@@ -25,6 +33,8 @@ public class PlaceholderFragmentTwo extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+
+    private Spinner spinner;
 
     public PlaceholderFragmentTwo() {
         // Required empty public constructor
@@ -60,7 +70,18 @@ public class PlaceholderFragmentTwo extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_placeholder_two, container, false);
+        //super.onCreateView(inflater, container, savedInstanceState);
+        View view = inflater.inflate(R.layout.fragment_placeholder_two, container, false);
+        EditText editText = (EditText) view.findViewById(R.id.simpleEditText);
+        spinner = view.findViewById(R.id.Spinner1);
+        ArrayList<String> spinnerArgs = new ArrayList<>();
+        spinnerArgs.add("Count words");
+        spinnerArgs.add("Count characters");
+        ArrayAdapter<String> spinnerAdapter = new ArrayAdapter<>(getActivity(), android.R.layout.simple_spinner_item, spinnerArgs);
+        spinnerAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinner.setAdapter(spinnerAdapter);
+
+
+        return view;
     }
 }
