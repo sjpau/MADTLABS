@@ -17,6 +17,7 @@ import java.util.ArrayList;
 import java.util.StringTokenizer;
 
 import xyz.mobyus.labs.R;
+import xyz.mobyus.labs.StringParser;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -100,13 +101,11 @@ public class PlaceholderFragmentTwo extends Fragment implements View.OnClickList
             String tmpSpinnerItem = spinner.getSelectedItem().toString();
             switch (tmpSpinnerItem) {
                 case "Count words":
-                    StringTokenizer words = new StringTokenizer(textFieldInput);
-                    int countStrings = words.countTokens();
+                    int countStrings = StringParser.CountStrings(textFieldInput);
                     buttonParser.setText(countStrings + " words!");
                     break;
                 case "Count characters":
-                    String[] chars = textFieldInput.split("\\s");
-                    int countChars = textFieldInput.length();
+                    int countChars = StringParser.CountChars(textFieldInput);
                     buttonParser.setText(countChars + " characters");
                     break;
             }
