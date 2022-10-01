@@ -15,9 +15,6 @@ import androidx.lifecycle.ViewModelProvider;
 import xyz.mobyus.labs.R;
 import xyz.mobyus.labs.databinding.FragmentMainBinding;
 
-/**
- * A placeholder fragment containing a simple view.
- */
 public class PlaceholderFragment extends Fragment {
 
     private static final String ARG_SECTION_NUMBER = "section_number";

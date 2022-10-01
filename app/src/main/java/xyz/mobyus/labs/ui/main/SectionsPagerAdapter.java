@@ -36,17 +36,17 @@ public class SectionsPagerAdapter extends FragmentPagerAdapter {
     public Fragment getItem(int position) {
         switch(position) {
             case 0:
-                return PlaceholderFragmentOne.newInstance("", "");
+                return PlaceholderFragmentOne.newInstance();
             case 1:
-                return PlaceholderFragmentTwo.newInstance("", "");
+                return PlaceholderFragmentTwo.newInstance();
             case 2:
-                return PlaceholderFragmentThree.newInstance("", "");
+                return PlaceholderFragmentThree.newInstance();
             case 3:
-                return PlaceholderFragmentFour.newInstance("", "");
+                return PlaceholderFragmentFour.newInstance();
             case 4:
-                return PlaceholderFragmentFive.newInstance("", "");
+                return PlaceholderFragmentFive.newInstance();
             case 5:
-                return PlaceholderFragmentSix.newInstance("", "");
+                return PlaceholderFragmentSix.newInstance();
             default:
                 return PlaceholderFragment.newInstance(0);
         }
