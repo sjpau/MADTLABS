@@ -1,14 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.main.PlaceholderFragmentFive">
 
-    <!-- TODO: Update blank fragment layout -->
     <TextView
+        android:id="@+id/crypto_rates_text"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="" />
+        android:layout_height="0dp"
+        android:textSize="42sp"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:text="Cryptocurrency Rates"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="176dp" />
 
-</FrameLayout>
+    <TextView
+        android:id="@+id/crypto_adapter_text"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="10dip"
+        android:paddingTop="2dip"
+        android:paddingBottom="3dip"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/crypto_rates_text" />
+
+    <ListView
+        android:id="@+id/crypto_rates_list"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/crypto_rates_text" />
+</androidx.constraintlayout.widget.ConstraintLayout>
