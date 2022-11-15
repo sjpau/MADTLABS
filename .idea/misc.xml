@@ -5,9 +5,10 @@
       <map>
         <entry key="app/src/main/res/layout/activity_edit_note.xml" value="0.2513586956521739" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.1887031408308004" />
+        <entry key="app/src/main/res/layout/crypto_listview_layout.xml" value="0.15450861195542046" />
         <entry key="app/src/main/res/layout/fragment_blank.xml" value="0.14944275582573455" />
         <entry key="app/src/main/res/layout/fragment_main.xml" value="0.3880208333333333" />
-        <entry key="app/src/main/res/layout/fragment_placeholder_five.xml" value="0.18" />
+        <entry key="app/src/main/res/layout/fragment_placeholder_five.xml" value="0.25" />
         <entry key="app/src/main/res/layout/fragment_placeholder_four.xml" value="0.25" />
         <entry key="app/src/main/res/layout/fragment_placeholder_one.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_placeholder_six.xml" value="0.16843971631205673" />

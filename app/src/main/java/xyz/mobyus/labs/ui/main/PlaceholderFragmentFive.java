@@ -7,10 +7,13 @@ import android.os.Bundle;
 import androidx.fragment.app.Fragment;
 import androidx.loader.content.AsyncTaskLoader;
 
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -46,7 +49,6 @@ public class PlaceholderFragmentFive extends Fragment {
     public String APIURL = "https://api.exchangerate.host/latest/";
     static ListView ratesListView;
     static ArrayAdapter<String> ratesListAdapter;
-    ArrayList<String> ratesList;
     TextView textbox;
 
     public interface RetrofitAPI {
@@ -87,6 +89,24 @@ public class PlaceholderFragmentFive extends Fragment {
 
         RetrofitWrapper r = new RetrofitWrapper();
         r.getRatesData();
+
+        EditText inputSearch = (EditText) view.findViewById(R.id.searchBar);
+        inputSearch.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence cs, int i, int i1, int i2) {
+                ratesListAdapter.getFilter().filter(cs);
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+
+            }
+        });
         return view;
     }
 
@@ -119,7 +139,7 @@ public class PlaceholderFragmentFive extends Fragment {
                         } catch (IOException e) {
                             e.printStackTrace();
                         }
-                        PlaceholderFragmentFive.ratesListAdapter = new ArrayAdapter<>(getContext(), R.layout.fragment_placeholder_five, R.id.crypto_rates_text, ratesList);
+                        PlaceholderFragmentFive.ratesListAdapter = new ArrayAdapter<>(getContext(), R.layout.crypto_listview_layout, ratesList);
                         PlaceholderFragmentFive.ratesListView.setAdapter(PlaceholderFragmentFive.ratesListAdapter);
                     }
                 }
